@@ -11,7 +11,7 @@ React(Vite)로 만든 메모장 화면이 Render에 배포된 FastAPI 백엔드�
 |---|---|
 | 소개 페이지 (Vercel) | https://<프로젝트>.vercel.app/intro.html |
 | 메모장 · 연동 실습 (Vercel) | https://<프로젝트>.vercel.app/ |
-| 백엔드 Swagger UI (Render) | https://<서비스>.onrender.com/docs |
+| 백엔드 Swagger UI (Render) | https://memo-backend-0kin.onrender.com/docs |
 | 백엔드 저장소 | https://github.com/pgunil07-lang/memo-backend |
 
 (배포 후 위 표를 실제 주소로 채운다)
@@ -41,5 +41,5 @@ npm run build      # dist/ 생성 (Vercel이 배포하는 결과물)
 ## Vercel 설정
 
 - Framework Preset: Vite / Build: `npm run build` / Output: `dist`
-- Environment Variables: `VITE_API_URL` = Render 백엔드 주소 (예: `https://memo-backend-xxxx.onrender.com`)
+- Environment Variables: `VITE_API_URL` = Render 백엔드 주소 (`https://memo-backend-0kin.onrender.com`)
 - 환경변수를 바꾸면 재배포해야 반영된다(빌드 시점에 주입).
