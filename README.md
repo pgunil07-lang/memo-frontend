@@ -9,12 +9,11 @@ React(Vite)로 만든 메모장 화면이 Render에 배포된 FastAPI 백엔드�
 
 | 항목 | 주소 |
 |---|---|
-| 소개 페이지 (Vercel) | https://<프로젝트>.vercel.app/intro.html |
-| 메모장 · 연동 실습 (Vercel) | https://<프로젝트>.vercel.app/ |
+| 소개 페이지 (Vercel) | https://memo-frontend-phi.vercel.app/intro.html |
+| 메모장 · 연동 실습 (Vercel) | https://memo-frontend-phi.vercel.app/ |
 | 백엔드 Swagger UI (Render) | https://memo-backend-0kin.onrender.com/docs |
 | 백엔드 저장소 | https://github.com/pgunil07-lang/memo-backend |
 
-(배포 후 위 표를 실제 주소로 채운다)
 
 ## 주요 구성
 
