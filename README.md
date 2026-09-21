@@ -1,16 +1,45 @@
-# React + Vite
+# memo-frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+개인 소개 페이지 + 프론트엔드·백엔드 연동 실습 (클라우드 컴퓨팅 2주차 과제)
 
-Currently, two official plugins are available:
+React(Vite)로 만든 메모장 화면이 Render에 배포된 FastAPI 백엔드를 호출해 메모를 저장·조회·삭제한다.
+소개 페이지는 순수 HTML로 작성했고, 두 페이지는 서로 링크로 오갈 수 있다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 배포 주소
 
-## React Compiler
+| 항목 | 주소 |
+|---|---|
+| 소개 페이지 (Vercel) | https://<프로젝트>.vercel.app/intro.html |
+| 메모장 · 연동 실습 (Vercel) | https://<프로젝트>.vercel.app/ |
+| 백엔드 Swagger UI (Render) | https://<서비스>.onrender.com/docs |
+| 백엔드 저장소 | https://github.com/pgunil07-lang/memo-backend |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+(배포 후 위 표를 실제 주소로 채운다)
 
-## Expanding the Oxlint configuration
+## 주요 구성
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```
+memo-frontend/
+├── public/intro.html   # 개인 소개 페이지 (순수 HTML) → /intro.html
+├── src/App.jsx         # 메모장 화면. fetch로 백엔드 /memos 호출
+├── src/main.jsx        # React 진입점
+├── index.html          # SPA 뼈대
+└── .env                # VITE_API_URL (커밋하지 않음)
+```
+
+- `App.jsx`는 `import.meta.env.VITE_API_URL`로 백엔드 주소를 읽는다. 로컬은 `.env`, Vercel은 Environment Variables에서 넣는다.
+- 소개 페이지(`/intro.html`) ↔ 메모장(`/`)은 상단 링크로 서로 이동한다.
+
+## 로컬 실행
+
+```bash
+npm install
+npm run dev        # http://localhost:5173  (백엔드는 memo-backend에서 fastapi dev main.py)
+npm run build      # dist/ 생성 (Vercel이 배포하는 결과물)
+```
+
+## Vercel 설정
+
+- Framework Preset: Vite / Build: `npm run build` / Output: `dist`
+- Environment Variables: `VITE_API_URL` = Render 백엔드 주소 (예: `https://memo-backend-xxxx.onrender.com`)
+- 환경변수를 바꾸면 재배포해야 반영된다(빌드 시점에 주입).

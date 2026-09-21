@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>소개 페이지</title>
+  <style>
+    :root { --ink:#1a2230; --soft:#5b6478; --bg:#f7f5f0; --card:#fff; --line:#e3ded3; --accent:#2f6f6a; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,"Malgun Gothic","Apple SD Gothic Neo","Noto Sans KR",sans-serif; line-height:1.7; }
+    .wrap { max-width:720px; margin:0 auto; padding:48px 16px 80px; }
+    nav a { color:var(--accent); text-decoration:none; font-weight:600; }
+    .hero { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:32px; margin:24px 0; }
+    .hero h1 { margin:0 0 8px; font-size:32px; }
+    .hero p { margin:0; color:var(--soft); }
+    h2 { font-size:20px; margin:32px 0 8px; border-left:4px solid var(--accent); padding-left:10px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+    .card { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px; }
+    .card strong { display:block; margin-bottom:4px; }
+    ul { padding-left:20px; margin:8px 0; }
+    .links a { display:inline-block; margin:6px 8px 0 0; padding:8px 14px; background:var(--accent); color:#fff; border-radius:8px; text-decoration:none; }
+    .links a.ghost { background:transparent; color:var(--accent); border:1px solid var(--accent); }
+    footer { margin-top:40px; color:var(--soft); font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav><a href="/">← 📝 메모장(프론트·백엔드 연동 실습)으로</a></nav>
+
+    <section class="hero">
+      <h1>안녕하세요, [이름]입니다 👋</h1>
+      <p>[소속 / 학과 · 한 줄 소개를 적어 주세요]</p>
+    </section>
+
+    <h2>관심사</h2>
+    <div class="grid">
+      <div class="card"><strong>💻 개발</strong>[예: 웹 개발, 클라우드 컴퓨팅]</div>
+      <div class="card"><strong>🎵 취미</strong>[예: 음악, 운동]</div>
+      <div class="card"><strong>🎯 목표</strong>[예: 풀스택 서비스 하나 완성하기]</div>
+    </div>
+
+    <h2>이번 주에 배운 것</h2>
+    <ul>
+      <li>React(Vite)로 프론트엔드를 만들고 Vercel에 자동 배포</li>
+      <li>FastAPI로 메모 CRUD API를 만들고 Render에 배포</li>
+      <li>환경변수(<code>VITE_API_URL</code>, <code>ALLOWED_ORIGINS</code>)와 CORS로 두 서비스 연결</li>
+    </ul>
+
+    <h2>연동 실습</h2>
+    <p>아래 메모장은 Vercel의 React 화면이 Render의 FastAPI를 호출해 메모를 저장·조회·삭제합니다.</p>
+    <div class="links">
+      <a href="/">📝 메모장 열기</a>
+      <a class="ghost" href="https://github.com/pgunil07-lang/memo-frontend" target="_blank" rel="noreferrer">프론트엔드 GitHub</a>
+      <a class="ghost" href="https://github.com/pgunil07-lang/memo-backend" target="_blank" rel="noreferrer">백엔드 GitHub</a>
+    </div>
+
+    <h2>연락처</h2>
+    <div class="grid">
+      <div class="card"><strong>📧 Email</strong><a href="mailto:pgunil0722@gmail.com">pgunil0722@gmail.com</a></div>
+      <div class="card"><strong>💻 GitHub</strong><a href="https://github.com/pgunil07-lang" target="_blank" rel="noreferrer">@pgunil07-lang</a></div>
+    </div>
+
+    <footer>클라우드 컴퓨팅 · 2주차 풀스택 웹개발 과제</footer>
+  </div>
+</body>
+</html>
